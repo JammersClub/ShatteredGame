@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Movements;
+using UnityEngine;
 
-namespace Movements
+namespace Player
 {
     public class PlayerMovement : PhysicalMovement
     {
@@ -12,7 +13,6 @@ namespace Movements
             var dir = (Vector3) TargetPosition - transform.position;
             var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             TargetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
-            ;
         }
     }
 }
