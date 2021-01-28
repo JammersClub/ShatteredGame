@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Abilities
 {
-    public class AbilityMovement : PhysicalMovement
+    public class AbilityMovement : Movement.Physical
     {
         [SerializeField] private Vector2 offset;
         private Movement _target;

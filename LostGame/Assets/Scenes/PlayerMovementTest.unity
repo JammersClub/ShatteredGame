@@ -167,7 +167,6 @@ MonoBehaviour:
   m_Cameras: []
   m_RendererIndex: -1
   m_VolumeLayerMask:
-    serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_RenderPostProcessing: 0
@@ -270,7 +269,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 1
   rotationSpeed: 1
-  target: {fileID: 0}
+  orbitOnCenter: 0
+  orbitOn: {x: 0, y: 0}
   offset: {x: -0.2, y: 0}
 --- !u!50 &727143229
 Rigidbody2D:
@@ -417,7 +417,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 1
   rotationSpeed: 1
-  target: {fileID: 0}
+  orbitOnCenter: 0
+  orbitOn: {x: 0, y: 0}
   offset: {x: 0, y: -0.2}
 --- !u!50 &1518284532
 Rigidbody2D:
@@ -560,9 +561,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LightType: 4
+  m_PreviousLightType: 4
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
   m_Intensity: 1
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
@@ -570,6 +576,16 @@ MonoBehaviour:
   m_UseNormalMap: 0
   m_LightOrder: 0
   m_AlphaBlendOnOverlap: 0
+  m_PreviousLightOrder: 0
+  m_PreviousBlendStyleIndex: 0
+  m_PreviousLightVolumeOpacity: 0
+  m_PreviousLightCookieSpriteExists: 0
+  m_PreviousLightCookieSprite: {fileID: 0}
+  m_Mesh: {fileID: 0}
+  m_LightCullingIndex: 0
+  m_LocalBounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   m_ShadowIntensity: 0
   m_ShadowVolumeIntensity: 0
   m_PointLightInnerAngle: 360
@@ -588,6 +604,12 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+  m_PreviousShapeLightFalloffSize: 0.5
+  m_PreviousShapeLightParametricSides: 5
+  m_PreviousShapeLightParametricAngleOffset: 0
+  m_PreviousShapeLightParametricRadius: 1
+  m_PreviousShapeLightFalloffOffset: {x: 0, y: 0}
+  m_PreviousShapePathHash: 160822549
 --- !u!4 &1821328781
 Transform:
   m_ObjectHideFlags: 0
@@ -701,6 +723,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 1
   rotationSpeed: 10
+  orbitOnCenter: 0
+  orbitOn: {x: 0, y: 0}
+  _rigidbody2D: {fileID: 0}
 --- !u!61 &1842017092
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -972,7 +997,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 1
   rotationSpeed: 1
-  target: {fileID: 0}
+  orbitOnCenter: 10
+  orbitOn: {x: 0, y: 0}
   offset: {x: 0, y: 0.2}
 --- !u!212 &2012538718
 SpriteRenderer:

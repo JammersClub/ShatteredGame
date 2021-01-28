@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Player
 {
-    public class PlayerMovement : PhysicalMovement
+    public class Player : Movement.Physical
     {
         // Update is called once per frame
         private void Update()
