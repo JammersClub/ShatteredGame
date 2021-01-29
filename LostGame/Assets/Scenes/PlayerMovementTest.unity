@@ -153,7 +153,7 @@ Transform:
   - {fileID: 1455568883}
   - {fileID: 718088470}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &249755896
 GameObject:
@@ -258,8 +258,9 @@ GameObject:
   m_Component:
   - component: {fileID: 458263193}
   - component: {fileID: 458263194}
+  - component: {fileID: 458263195}
   m_Layer: 0
-  m_Name: Sprite
+  m_Name: Ability3Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -273,11 +274,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 458263192}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.22, y: -1.6, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
-  m_Father: {fileID: 1518284535}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &458263194
 SpriteRenderer:
@@ -329,6 +330,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &458263195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458263192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e66472f6d5f942a29b0e82a772fda550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetMovement: {fileID: 1518284531}
+  idleSpritesList:
+    topLeft: {fileID: 0}
+    topMiddle: {fileID: 0}
+    topRight: {fileID: 0}
+    middleLeft: {fileID: 0}
+    middleRight: {fileID: 0}
+    downLeft: {fileID: 0}
+    downMiddle: {fileID: 0}
+    downRight: {fileID: 0}
+  moveSpritesList:
+    topLeft: {fileID: 0}
+    topMiddle: {fileID: 0}
+    topRight: {fileID: 0}
+    middleLeft: {fileID: 0}
+    middleRight: {fileID: 0}
+    downLeft: {fileID: 0}
+    downMiddle: {fileID: 0}
+    downRight: {fileID: 0}
+  spriteLerpSpeed: 1
 --- !u!1 &718088466
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,10 +549,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.45, y: -1.49, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
-  m_Children:
-  - {fileID: 1095024539}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &769801404
 GameObject:
@@ -615,7 +647,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: -48.710003, y: -52.588, z: 57.368004}
 --- !u!1 &892884425
 GameObject:
@@ -627,8 +659,9 @@ GameObject:
   m_Component:
   - component: {fileID: 892884426}
   - component: {fileID: 892884427}
+  - component: {fileID: 892884428}
   m_Layer: 0
-  m_Name: Sprite
+  m_Name: Ability1Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -642,10 +675,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 892884425}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -2.63, y: 2.65, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
-  m_Father: {fileID: 2012538719}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &892884427
@@ -698,6 +731,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &892884428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892884425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e66472f6d5f942a29b0e82a772fda550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetMovement: {fileID: 2012538717}
+  idleSpritesList:
+    topLeft: {fileID: 0}
+    topMiddle: {fileID: 0}
+    topRight: {fileID: 0}
+    middleLeft: {fileID: 0}
+    middleRight: {fileID: 0}
+    downLeft: {fileID: 0}
+    downMiddle: {fileID: 0}
+    downRight: {fileID: 0}
+  moveSpritesList:
+    topLeft: {fileID: 0}
+    topMiddle: {fileID: 0}
+    topRight: {fileID: 0}
+    middleLeft: {fileID: 0}
+    middleRight: {fileID: 0}
+    downLeft: {fileID: 0}
+    downMiddle: {fileID: 0}
+    downRight: {fileID: 0}
+  spriteLerpSpeed: 1
 --- !u!1 &1095024538
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,8 +773,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1095024539}
   - component: {fileID: 1095024540}
+  - component: {fileID: 1095024541}
   m_Layer: 0
-  m_Name: Sprite
+  m_Name: Ability2Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -723,11 +789,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1095024538}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -3.45, y: -1.49, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
-  m_Father: {fileID: 727143232}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1095024540
 SpriteRenderer:
@@ -779,6 +845,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1095024541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095024538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e66472f6d5f942a29b0e82a772fda550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetMovement: {fileID: 727143228}
+  idleSpritesList:
+    topLeft: {fileID: 0}
+    topMiddle: {fileID: 0}
+    topRight: {fileID: 0}
+    middleLeft: {fileID: 0}
+    middleRight: {fileID: 0}
+    downLeft: {fileID: 0}
+    downMiddle: {fileID: 0}
+    downRight: {fileID: 0}
+  moveSpritesList:
+    topLeft: {fileID: 0}
+    topMiddle: {fileID: 0}
+    topRight: {fileID: 0}
+    middleLeft: {fileID: 0}
+    middleRight: {fileID: 0}
+    downLeft: {fileID: 0}
+    downMiddle: {fileID: 0}
+    downRight: {fileID: 0}
+  spriteLerpSpeed: 1
 --- !u!1 &1168480262
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,7 +907,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1168480264
 SpriteRenderer:
@@ -874,10 +972,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetMovement: {fileID: 1654077294}
-  spritesList:
-    default: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  idleSpritesList:
     topLeft: {fileID: 0}
-    topMiddle: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    topMiddle: {fileID: 0}
+    topRight: {fileID: 0}
+    middleLeft: {fileID: 0}
+    middleRight: {fileID: 0}
+    downLeft: {fileID: 0}
+    downMiddle: {fileID: 0}
+    downRight: {fileID: 0}
+  moveSpritesList:
+    topLeft: {fileID: 0}
+    topMiddle: {fileID: 0}
     topRight: {fileID: 0}
     middleLeft: {fileID: 0}
     middleRight: {fileID: 0}
@@ -1213,10 +1319,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.22, y: -1.6, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
-  m_Children:
-  - {fileID: 458263193}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1519929725
 GameObject:
@@ -1357,7 +1462,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1992732486
 GameObject:
@@ -1449,7 +1554,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &2001157781
 GameObject:
@@ -1607,8 +1712,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.63, y: 2.65, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
-  m_Children:
-  - {fileID: 892884426}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

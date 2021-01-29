@@ -13,8 +13,10 @@ namespace Sprites
     public class SpriteTranslator : MonoBehaviour
     {
         private const int Offset=62;
+        private const float IdleToWalk=0.2f;
         [SerializeField] private Movement targetMovement;
-        [SerializeField] private CharacterDirectionalSprites spritesList;
+        [SerializeField] private CharacterDirectionalSprites idleSpritesList;
+        [SerializeField] private CharacterDirectionalSprites moveSpritesList;
         [SerializeField] private float spriteLerpSpeed=1f;
         private SpriteRenderer _spriteRenderer;
         private float _lastAngle;
@@ -33,13 +35,12 @@ namespace Sprites
             transform.position = position;
             transform.rotation=Quaternion.LookRotation(-_cameraTransform.forward,Vector3.forward);
             _lastAngle = Mathf.Lerp(_lastAngle, targetMovement.transform.eulerAngles.z, Time.deltaTime*spriteLerpSpeed);
-            _spriteRenderer.sprite = spritesList[_lastAngle + Offset];
+            _spriteRenderer.sprite = targetMovement.DistanceToTarget < IdleToWalk ? idleSpritesList[_lastAngle + Offset] : moveSpritesList[_lastAngle + Offset];
         }
     }
     [Serializable]
     public struct CharacterDirectionalSprites
     {
-        [SerializeField] private Sprite @default;
         [SerializeField] private Sprite topLeft;
         [SerializeField] private Sprite topMiddle;
         [SerializeField] private Sprite topRight;
@@ -57,12 +58,12 @@ namespace Sprites
                 if (Math.Abs(angleToUp-90f)<Tolerance) return topMiddle;
                 if (Math.Abs(angleToUp-45f)<Tolerance) return topRight;
                 if (Math.Abs(angleToUp-180f)<Tolerance) return middleLeft;
-                if (Math.Abs(angleToUp-0f)<Tolerance) return middleRight;
                 if (Math.Abs(angleToUp-225f)<Tolerance) return downLeft;
                 if (Math.Abs(angleToUp-270f)<Tolerance) return downMiddle;
                 if (Math.Abs(angleToUp-315f)<Tolerance) return downRight;
                 if (Math.Abs(angleToUp-360f)<Tolerance) return middleRight;
-                return @default;
+                if (Math.Abs(angleToUp-0f)<Tolerance) return middleRight;
+                return downMiddle;
             }
         }
     }

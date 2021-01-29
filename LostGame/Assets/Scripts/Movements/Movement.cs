@@ -15,6 +15,7 @@ namespace Movements
         [NonSerialized] public Quaternion TargetRotation;
 
         public Vector3 MovementDirection => TargetPosition-transform.position;
+        public float DistanceToTarget => Vector3.Distance(TargetPosition,transform.position);
         protected float MovementSpeed => movementSpeed;
         protected float RotationSpeed => rotationSpeed;
 
