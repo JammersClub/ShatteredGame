@@ -15,7 +15,7 @@ namespace Movements
             TargetRotation = Quaternion.AngleAxis(_rotationAngle, Vector3.forward);
         }
 
-        public static void Create(Transform child, Vector2 center, float movementSpeed)
+        public static void Create(Transform child, Vector3 center, float movementSpeed)
         {
             var gm = new GameObject($"{child.name} Orbit Parent.").AddComponent<OrbitParentMovement>();
             gm.transform.position = center;

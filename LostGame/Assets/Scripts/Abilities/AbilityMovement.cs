@@ -5,7 +5,7 @@ namespace Abilities
 {
     public class AbilityMovement : Movement.Physical
     {
-        [SerializeField] private Vector2 offset;
+        [SerializeField] private Vector3 offset;
         private Movement _target;
 
         public Movement Target

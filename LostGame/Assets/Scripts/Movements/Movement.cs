@@ -10,8 +10,8 @@ namespace Movements
         [SerializeField] private float movementSpeed = 1;
         [SerializeField] private float rotationSpeed = 1;
         [SerializeField] private float orbitOnCenter;
-        [SerializeField] private Vector2 orbitOn;
-        [NonSerialized] public Vector2 TargetPosition;
+        [SerializeField] private Vector3 orbitOn;
+        [NonSerialized] public Vector3 TargetPosition;
         [NonSerialized] public Quaternion TargetRotation;
 
         protected float MovementSpeed => movementSpeed;
@@ -28,29 +28,32 @@ namespace Movements
 
         private void FixedUpdate()
         {
-            transform.position = Vector2.Lerp(transform.position, TargetPosition, Time.deltaTime * movementSpeed);
+            transform.position = Vector3.Lerp(transform.position, TargetPosition, Time.deltaTime * movementSpeed);
             transform.rotation = Quaternion.Lerp(transform.rotation, TargetRotation, Time.deltaTime * rotationSpeed);
         }
         
-        [RequireComponent(typeof(Rigidbody2D))]
+        [RequireComponent(typeof(Rigidbody))]
         public abstract class Physical : Movement
         {
-            private Rigidbody2D _rigidbody2D;
+            [Tooltip("By Pass Z Axis")] [SerializeField] private bool bypassGravityAxis = true;
+            private Rigidbody _rigidbody;
 
             private new void Awake()
             {
+                Physics.gravity=Vector3.forward;
                 TargetPosition = transform.position;
                 TargetRotation = transform.rotation;
-                _rigidbody2D = GetComponent<Rigidbody2D>();
+                _rigidbody = GetComponent<Rigidbody>();
                 if(orbitOnCenter!=0)
                     OrbitParentMovement.Create(transform, orbitOn, orbitOnCenter);
             }
 
             private new void FixedUpdate()
             {
-                _rigidbody2D.MovePosition(Vector2.Lerp(_rigidbody2D.position, TargetPosition,
-                    Time.deltaTime * RotationSpeed));
-                _rigidbody2D.MoveRotation(Quaternion.Lerp(transform.rotation, TargetRotation,
+                var position = Vector3.Lerp(_rigidbody.position, TargetPosition, Time.deltaTime * RotationSpeed);
+                if(bypassGravityAxis) position.z = _rigidbody.position.z;
+                _rigidbody.MovePosition(position);
+                _rigidbody.MoveRotation(Quaternion.Lerp(transform.rotation, TargetRotation,
                     Time.deltaTime * RotationSpeed));
             }
         }
