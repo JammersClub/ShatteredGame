@@ -3,27 +3,26 @@ using UnityEngine;
 
 namespace Abilities
 {
+    [RequireComponent(typeof(AbilityAssigner))]
     public class AbilityMovement : Movement
     {
         [SerializeField] private Vector3 offset;
-        private Movement _target;
+        private Movement _player;
 
-        public Movement Target
+        protected override void Awake()
         {
-            set
+            enabled = false;
+            GetComponent<AbilityAssigner>().OnPlayerEnter += gm =>
             {
-                _target = value;
-                TargetIsNull = _target == null;
-            }
+                _player = gm.GetComponent<Movement>();
+                if (_player) enabled = true;
+            };
         }
-
-        public bool TargetIsNull { get; private set; } = true;
 
         private void Update()
         {
-            if (TargetIsNull) return;
-            TargetPosition = _target.transform.TransformPoint(offset);
-            TargetRotation = _target.TargetRotation;
+            TargetPosition = _player.transform.TransformPoint(offset);
+            TargetRotation = _player.TargetRotation;
         }
     }
 }

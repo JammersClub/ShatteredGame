@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3153450723789503895}
   - component: {fileID: 3153450723789503891}
-  - component: {fileID: 3153450723789503894}
   - component: {fileID: 3153450723789503889}
   - component: {fileID: 3153450723789503888}
   - component: {fileID: 3153450723789503892}
+  - component: {fileID: 4662622423661853486}
   m_Layer: 0
   m_Name: 'Player '
   m_TagString: Untagged
@@ -52,19 +52,6 @@ MonoBehaviour:
   orbitOnCenter: 0
   orbitOn: {x: 0, y: 0, z: 0}
   bypassGravityAxis: 1
---- !u!114 &3153450723789503894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3153450723789503890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a249ce5d9e7d42e5ba38751f8d21d7e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceToCollectAbility: 2
 --- !u!54 &3153450723789503889
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -156,3 +143,15 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &4662622423661853486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3153450723789503890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd56d5bcce8647b8bba580e17247b23e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
