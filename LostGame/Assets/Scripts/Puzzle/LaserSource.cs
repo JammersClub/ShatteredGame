@@ -1,5 +1,5 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+
 // ReSharper disable Unity.InefficientPropertyAccess
 
 namespace Puzzle

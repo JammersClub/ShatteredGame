@@ -17,7 +17,8 @@ namespace Player
 
         private void Update()
         {
-            var movement=_camera.TransformDirection(new Vector3(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical")));
+            var movement =
+                _camera.TransformDirection(new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
             movement.z = 0;
             TargetPosition += movement.normalized * (Time.deltaTime * MovementSpeed);
             var dir = TargetPosition - transform.position;
