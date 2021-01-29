@@ -14,11 +14,11 @@ namespace Movements
         [NonSerialized] public Vector3 TargetPosition;
         [NonSerialized] public Quaternion TargetRotation;
 
+        public Vector3 MovementDirection => TargetPosition-transform.position;
         protected float MovementSpeed => movementSpeed;
-
         protected float RotationSpeed => rotationSpeed;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             TargetPosition = transform.position;
             TargetRotation = transform.rotation;
@@ -38,14 +38,11 @@ namespace Movements
             [Tooltip("By Pass Z Axis")] [SerializeField] private bool bypassGravityAxis = true;
             private Rigidbody _rigidbody;
 
-            private new void Awake()
+            protected override void Awake()
             {
+                base.Awake();
                 Physics.gravity=Vector3.forward;
-                TargetPosition = transform.position;
-                TargetRotation = transform.rotation;
                 _rigidbody = GetComponent<Rigidbody>();
-                if(orbitOnCenter!=0)
-                    OrbitParentMovement.Create(transform, orbitOn, orbitOnCenter);
             }
 
             private new void FixedUpdate()
