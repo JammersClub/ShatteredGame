@@ -286,3 +286,4 @@ MonoBehaviour:
   radiusToDetectBox: 1
   targetDoor: {fileID: 0}
   box: {fileID: 0}
+  offset: {x: -0.5, y: 0, z: -0.5}
