@@ -14,10 +14,10 @@ namespace Movements
         [NonSerialized] public Vector3 TargetPosition;
         [NonSerialized] public Quaternion TargetRotation;
 
-        public Vector3 MovementDirection => TargetPosition - transform.position;
         public float DistanceToTarget => Vector3.Distance(TargetPosition, transform.position);
         protected float MovementSpeed => movementSpeed;
         protected float RotationSpeed => rotationSpeed;
+        public virtual Vector3 Velocity => TargetPosition - transform.position;
 
         protected virtual void Awake()
         {
@@ -42,6 +42,7 @@ namespace Movements
             private Rigidbody _rigidbody;
 
             public Rigidbody Rigidbody => _rigidbody;
+            public override Vector3 Velocity => _rigidbody.velocity;
 
             protected override void Awake()
             {

@@ -30,9 +30,9 @@ namespace Sprites
         private void Update()
         {
             transform.rotation = Quaternion.LookRotation(_cameraTransform.forward, Vector3.up);
-            var movement = targetMovement.transform.InverseTransformDirection(_cameraTransform.forward);
-            _animator.SetFloat(Vertical, -movement.x);
-            _animator.SetFloat(Horizontal, movement.z);
+            var targetMovementVelocity = _cameraTransform.TransformDirection(targetMovement.Velocity);
+            _animator.SetFloat(Vertical, -targetMovementVelocity.x);
+            _animator.SetFloat(Horizontal, targetMovementVelocity.z);
         }
     }
 }
