@@ -44,6 +44,8 @@ GameObject:
   - component: {fileID: 2410225814691893288}
   - component: {fileID: 5113387875421651377}
   - component: {fileID: 9094396077149055090}
+  - component: {fileID: 9213572062632462200}
+  - component: {fileID: 6700033362029025124}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -341,3 +343,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 3, z: 1}
   m_Center: {x: 0.5, y: 1.5, z: -0.5}
+--- !u!54 &9213572062632462200
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5747106091181953617}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
+--- !u!114 &6700033362029025124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5747106091181953617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9be174e233614783987412a3905da8c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceToAssignToPlayer: 3
