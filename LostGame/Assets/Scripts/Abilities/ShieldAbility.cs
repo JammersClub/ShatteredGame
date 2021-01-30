@@ -1,4 +1,5 @@
-﻿using Puzzle;
+﻿using Player;
+using Puzzle;
 using UnityEngine;
 
 namespace Abilities
@@ -6,18 +7,18 @@ namespace Abilities
     public sealed class ShieldAbility : Ability
     {
         [Tooltip("In Seconds.")] [SerializeField] private float shieldTime=5;
-        [SerializeField] private GameObject shieldGraphicalObject;
-        private LaserReceiverData _player;
+        private ShieldAuthoring _player;
+        private LaserReceiverData _playerLr;
         private float _timer;
 
         private void Awake()
         {
             enabled = false;
-            shieldGraphicalObject.SetActive(false);
             GetComponent<AbilityAssigner>().OnPlayerEnter += gm =>
             {
-                _player = gm.GetComponent<LaserReceiverData>();
-                if(_player) enabled = true;
+                _player = gm.GetComponent<ShieldAuthoring>();
+                _playerLr = gm.GetComponent<LaserReceiverData>();
+                if(_player && _playerLr) enabled = true;
             };
         }
 
@@ -25,8 +26,8 @@ namespace Abilities
         {
             _timer -= Time.deltaTime;
             if (_timer < 0) _timer = shieldTime * 2;
-            _player.receiveLaser=_timer > shieldTime;
-            shieldGraphicalObject.SetActive(!_player.receiveLaser);
+            _playerLr.receiveLaser = _timer > shieldTime;
+            _player.ShieldEnabled=!_playerLr.receiveLaser;
         }
     }
 }

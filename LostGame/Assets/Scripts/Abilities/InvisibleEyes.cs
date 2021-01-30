@@ -1,4 +1,5 @@
-﻿using Puzzle;
+﻿using System;
+using Puzzle;
 using UnityEngine;
 
 namespace Abilities
@@ -13,11 +14,15 @@ namespace Abilities
             enabled = false;
             _light = GetComponent<Light>();
             _viewDistances = FindObjectsOfType<ViewDistanceData>();
-            foreach (var target in _viewDistances) target.Show = false;
             GetComponent<AbilityAssigner>().OnPlayerEnter += gm =>
             {
                 enabled = true;
             };
+        }
+
+        private void Start()
+        {
+            foreach (var target in _viewDistances) target.Show = false;
         }
 
         private void Update()
