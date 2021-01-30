@@ -7,11 +7,15 @@ namespace Puzzle
     {
         [SerializeField] private Vector3 openPoint;
         [SerializeField] private Vector3 closePoint;
+        [SerializeField] private bool removeParent = true;
 
         protected override void Awake()
         {
+            base.Awake();
+            if(removeParent) transform.parent = null;
             openPoint = transform.TransformPoint(openPoint);
             closePoint = transform.TransformPoint(closePoint);
+            _isOpen = false;
         }
 
         private bool _isOpen;

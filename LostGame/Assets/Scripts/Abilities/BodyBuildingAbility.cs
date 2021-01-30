@@ -1,21 +1,27 @@
 ﻿using System;
 using Player;
+using Puzzle;
 using UnityEngine;
 
 namespace Abilities
 {
     public sealed class BodyBuildingAbility : Ability
     {
-        [Tooltip("Set Player Mass After Received This Ability.")] [SerializeField] private float playerMass=2;
-        private Rigidbody _player;
+        private PlayerAuthoring _player;
+        private BoxAuthoring[] _scenePushableBoxes;
 
         private void Awake()
         {
             enabled = false;
+            _scenePushableBoxes = FindObjectsOfType<BoxAuthoring>();
+            foreach (var box in _scenePushableBoxes)
+                box.Pushable = false;
             GetComponent<AbilityAssigner>().OnPlayerEnter += gm =>
             {
-                _player = gm.GetComponent<Rigidbody>();
-                if (_player) _player.mass = playerMass;
+                _player = gm.GetComponent<PlayerAuthoring>();
+                if (!_player) return;
+                foreach (var box in _scenePushableBoxes)
+                    box.Pushable = true;
             };
         }
     }

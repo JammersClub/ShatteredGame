@@ -7,8 +7,8 @@ namespace Abilities
     public sealed class AbilityAssigner : MonoBehaviour
     {
         [SerializeField] private float distanceToAssignToPlayer = 1f;
+        [SerializeField] private bool autoDisable = true;
         private PlayerAuthoring _player;
-        private bool _scanForTarget = true;
         public event Action<GameObject> OnPlayerEnter;
 
         private void Awake()
@@ -21,13 +21,11 @@ namespace Abilities
 
         private void Update()
         {
-            if (!_scanForTarget) return;
             // ReSharper disable once InvertIf
             if (Vector3.Distance(_player.transform.position, transform.position) < distanceToAssignToPlayer)
             {
-                _scanForTarget = false;
                 OnPlayerEnter?.Invoke(_player.gameObject);
-                enabled = false;
+                if(autoDisable) enabled = false;
             }
         }
         
