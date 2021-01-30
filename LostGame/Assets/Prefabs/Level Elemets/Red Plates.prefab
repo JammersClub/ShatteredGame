@@ -44,8 +44,9 @@ GameObject:
   - component: {fileID: 8450764085847941199}
   - component: {fileID: 2123981154922201858}
   - component: {fileID: 2657419955166874517}
+  - component: {fileID: 476052696042376279}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -284,3 +285,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 3, z: 1}
   m_Center: {x: 0.5, y: 1.5, z: 0.5}
+--- !u!114 &476052696042376279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4242732947473943520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c03b41936733424c9fb48bb809fad34a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radiusToDetectBox: 1
+  targetDoor: {fileID: 0}
+  box: {fileID: 0}
