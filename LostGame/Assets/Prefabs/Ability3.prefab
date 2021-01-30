@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6664095580023887996}
   - component: {fileID: 6664095580023887995}
   - component: {fileID: 3545476483606696845}
+  - component: {fileID: 906101017}
   m_Layer: 0
   m_Name: Ability3
   m_TagString: Untagged
@@ -77,7 +78,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.95575905, b: 0.0047169924, a: 1}
   m_Intensity: 1
-  m_Range: 2
+  m_Range: 5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -125,6 +126,18 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &906101017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6664095580023887997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8876221d9dc473ea564f0ec9aead1ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6992679463018316818
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66472f6d5f942a29b0e82a772fda550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetMovement: {fileID: 0}
+  targetMovement: {fileID: 6664095580023887996}
 --- !u!95 &6992679463018316822
 Animator:
   serializedVersion: 3

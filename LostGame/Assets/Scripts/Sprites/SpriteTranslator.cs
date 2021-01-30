@@ -19,13 +19,11 @@ namespace Sprites
         private Animator _animator;
         private Transform _cameraTransform;
         private float _lastAngle;
-        private SpriteRenderer _spriteRenderer;
 
         private void Awake()
         {
             // ReSharper disable once PossibleNullReferenceException
             _cameraTransform = Camera.main.transform;
-            _spriteRenderer = GetComponent<SpriteRenderer>();
             _animator = GetComponent<Animator>();
         }
 
