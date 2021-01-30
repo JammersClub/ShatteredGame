@@ -31,8 +31,6 @@ namespace Sprites
 
         private void Update()
         {
-            var position = targetMovement.transform.position;
-            transform.position = position;
             transform.rotation = Quaternion.LookRotation(_cameraTransform.forward, Vector3.up);
             var movement = targetMovement.transform.InverseTransformDirection(_cameraTransform.forward);
             _animator.SetFloat(Vertical, -movement.x);
