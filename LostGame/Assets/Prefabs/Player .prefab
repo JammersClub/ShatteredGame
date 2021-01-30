@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3153450723789503888}
   - component: {fileID: 3153450723789503892}
   - component: {fileID: 4662622423661853486}
+  - component: {fileID: 314720483}
   m_Layer: 0
   m_Name: 'Player '
   m_TagString: Untagged
@@ -47,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 467ed4ac71135354d8bf5744268f614b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2
+  movementSpeed: 5
   rotationSpeed: 10
   orbitOnCenter: 0
   orbitOn: {x: 0, y: 0, z: 0}
@@ -155,3 +156,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd56d5bcce8647b8bba580e17247b23e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &314720483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3153450723789503890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0e9674d77e7422e9569b777ef87d5e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  receiveLaser: 1

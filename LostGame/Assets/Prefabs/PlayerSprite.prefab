@@ -96,7 +96,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetMovement: {fileID: 0}
-  spriteLerpSpeed: 100
 --- !u!95 &5443789808924374793
 Animator:
   serializedVersion: 3
