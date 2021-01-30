@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 // ReSharper disable Unity.InefficientPropertyAccess
 
@@ -11,6 +12,7 @@ namespace Puzzle
         [SerializeField] private int maxObjectsToDetect = 10;
         private LineRenderer _lineRenderer;
         private RaycastHit[] _raycastHits;
+        public event Action<Collider> OnCollision; 
 
         private void Awake()
         {
@@ -28,6 +30,7 @@ namespace Puzzle
                 {
                     if (hit.collider.CompareTag("ByPassLaser")) continue;
                     point = hit.point;
+                    OnCollision?.Invoke(hit.collider);
                     break;
                 }
             _lineRenderer.SetPosition(1, point);
