@@ -1,6 +1,6 @@
-﻿using System;
-using Movements;
+﻿using Movements;
 using UnityEngine;
+
 // ReSharper disable Unity.InefficientPropertyAccess
 
 // ReSharper disable ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
@@ -13,15 +13,13 @@ namespace Sprites
     [RequireComponent(typeof(Animator))]
     public class SpriteTranslator : MonoBehaviour
     {
-        private const int Offset=62;
-        [SerializeField] private Movement targetMovement;
-        [SerializeField] private float spriteLerpSpeed=1f;
-        private SpriteRenderer _spriteRenderer;
-        private float _lastAngle;
-        private Transform _cameraTransform;
-        private Animator _animator;
         private static readonly int Vertical = Animator.StringToHash("Vertical");
         private static readonly int Horizontal = Animator.StringToHash("Horizontal");
+        [SerializeField] private Movement targetMovement;
+        private Animator _animator;
+        private Transform _cameraTransform;
+        private float _lastAngle;
+        private SpriteRenderer _spriteRenderer;
 
         private void Awake()
         {
@@ -35,10 +33,10 @@ namespace Sprites
         {
             var position = targetMovement.transform.position;
             transform.position = position;
-            transform.rotation=Quaternion.LookRotation(_cameraTransform.forward,-Vector3.forward);
-            var movement = targetMovement.transform.InverseTransformDirection(-_cameraTransform.forward);
-            _animator.SetFloat(Vertical,movement.y);
-            _animator.SetFloat(Horizontal,movement.x);
+            transform.rotation = Quaternion.LookRotation(_cameraTransform.forward, Vector3.up);
+            var movement = targetMovement.transform.InverseTransformDirection(_cameraTransform.forward);
+            _animator.SetFloat(Vertical, -movement.x);
+            _animator.SetFloat(Horizontal, movement.z);
         }
     }
 }
