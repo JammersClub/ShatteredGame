@@ -13,11 +13,9 @@ namespace Sprites
     [RequireComponent(typeof(Animator))]
     public class SpriteTranslator : MonoBehaviour
     {
-        private const int Offset = 62;
         private static readonly int Vertical = Animator.StringToHash("Vertical");
         private static readonly int Horizontal = Animator.StringToHash("Horizontal");
         [SerializeField] private Movement targetMovement;
-        [SerializeField] private float spriteLerpSpeed = 1f;
         private Animator _animator;
         private Transform _cameraTransform;
         private float _lastAngle;

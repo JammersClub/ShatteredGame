@@ -27,6 +27,7 @@ namespace Abilities
             {
                 _scanForTarget = false;
                 OnPlayerEnter?.Invoke(_player.gameObject);
+                enabled = false;
             }
         }
         
