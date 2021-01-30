@@ -1,11 +1,17 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Puzzle
 {
     [RequireComponent(typeof(DoorAuthoring))]
-    public class ViewDistanceData:MonoBehaviour
+    public class ViewDistanceData:GatherBehaviour<ViewDistanceData>
     {
         private DoorAuthoring _doorMode;
+
+        private void Start()
+        {
+            Show = false;
+        }
 
         public bool Show
         {
