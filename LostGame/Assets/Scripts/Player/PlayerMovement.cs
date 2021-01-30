@@ -1,5 +1,6 @@
 ﻿using Movements;
 using UnityEngine;
+// ReSharper disable Unity.InefficientPropertyAccess
 
 namespace Player
 {
@@ -20,12 +21,11 @@ namespace Player
             var movement =
                 _camera.TransformDirection( new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
             movement.z = 0;
-            var velocity = Rigidbody.velocity;
-            velocity += movement.normalized * (Time.deltaTime * MovementSpeed);
-            Rigidbody.velocity = Vector3.ClampMagnitude(velocity,MovementSpeed);
+            var velocity = movement.normalized * MovementSpeed;
+            velocity.z = Rigidbody.velocity.z;
+            Rigidbody.velocity = velocity;
             TargetPosition = transform.TransformPoint(velocity);
-            var dir = velocity;
-            var angle = Mathf.Atan2(-dir.x, dir.y) * Mathf.Rad2Deg;
+            var angle = Mathf.Atan2(-velocity.x, velocity.y) * Mathf.Rad2Deg;
             TargetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
 
