@@ -23,7 +23,7 @@ namespace Abilities
         {
             if (!_scanForTarget) return;
             // ReSharper disable once InvertIf
-            if (Vector2.Distance(_player.transform.position, transform.position) < distanceToAssignToPlayer)
+            if (Vector3.Distance(_player.transform.position, transform.position) < distanceToAssignToPlayer)
             {
                 _scanForTarget = false;
                 OnPlayerEnter?.Invoke(_player.gameObject);

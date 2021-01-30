@@ -36,7 +36,7 @@ namespace Movements
         [RequireComponent(typeof(Rigidbody))]
         public abstract class Physical : Movement
         {
-            [Tooltip("By Pass Z Axis")] [SerializeField]
+            [Tooltip("By Pass Y Axis")] [SerializeField]
             private bool bypassGravityAxis = true;
 
             private Rigidbody _rigidbody;
@@ -46,14 +46,13 @@ namespace Movements
             protected override void Awake()
             {
                 base.Awake();
-                Physics.gravity = Vector3.forward;
                 _rigidbody = GetComponent<Rigidbody>();
             }
 
             protected override void FixedUpdate()
             {
                 var position = Vector3.Lerp(_rigidbody.position, TargetPosition, Time.deltaTime * RotationSpeed);
-                if (bypassGravityAxis) position.z = _rigidbody.position.z;
+                if (bypassGravityAxis) position.y = _rigidbody.position.y;
                 _rigidbody.MovePosition(position);
                 _rigidbody.MoveRotation(Quaternion.Lerp(transform.rotation, TargetRotation,
                     Time.deltaTime * RotationSpeed));

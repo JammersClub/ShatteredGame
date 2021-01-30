@@ -20,13 +20,13 @@ namespace Player
         {
             var movement =
                 _camera.TransformDirection( new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
-            movement.z = 0;
+            movement.y = 0;
             var velocity = movement.normalized * MovementSpeed;
-            velocity.z = Rigidbody.velocity.z;
+            velocity.y = Rigidbody.velocity.y;
             Rigidbody.velocity = velocity;
             TargetPosition = transform.TransformPoint(velocity);
-            var angle = Mathf.Atan2(-velocity.x, velocity.y) * Mathf.Rad2Deg;
-            TargetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            var angle = Mathf.Atan2(-velocity.x,velocity.z) * Mathf.Rad2Deg;
+            TargetRotation = Quaternion.AngleAxis(angle, Vector3.up);
         }
 
         protected override void FixedUpdate()

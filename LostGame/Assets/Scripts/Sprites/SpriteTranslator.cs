@@ -35,10 +35,10 @@ namespace Sprites
         {
             var position = targetMovement.transform.position;
             transform.position = position;
-            transform.rotation = Quaternion.LookRotation(_cameraTransform.forward, -Vector3.forward);
-            var movement = targetMovement.transform.InverseTransformDirection(-_cameraTransform.forward);
-            _animator.SetFloat(Vertical, movement.y);
-            _animator.SetFloat(Horizontal, movement.x);
+            transform.rotation = Quaternion.LookRotation(_cameraTransform.forward, Vector3.up);
+            var movement = targetMovement.transform.InverseTransformDirection(_cameraTransform.forward);
+            _animator.SetFloat(Vertical, -movement.x);
+            _animator.SetFloat(Horizontal, movement.z);
         }
     }
 }
