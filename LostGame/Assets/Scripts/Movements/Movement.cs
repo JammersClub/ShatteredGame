@@ -27,7 +27,7 @@ namespace Movements
                 OrbitParentMovement.Create(transform, orbitOn, orbitOnCenter);
         }
 
-        private void FixedUpdate()
+        protected virtual void FixedUpdate()
         {
             transform.position = Vector3.Lerp(transform.position, TargetPosition, Time.deltaTime * movementSpeed);
             transform.rotation = Quaternion.Lerp(transform.rotation, TargetRotation, Time.deltaTime * rotationSpeed);
@@ -41,6 +41,8 @@ namespace Movements
 
             private Rigidbody _rigidbody;
 
+            public Rigidbody Rigidbody => _rigidbody;
+
             protected override void Awake()
             {
                 base.Awake();
@@ -48,7 +50,7 @@ namespace Movements
                 _rigidbody = GetComponent<Rigidbody>();
             }
 
-            private new void FixedUpdate()
+            protected override void FixedUpdate()
             {
                 var position = Vector3.Lerp(_rigidbody.position, TargetPosition, Time.deltaTime * RotationSpeed);
                 if (bypassGravityAxis) position.z = _rigidbody.position.z;
