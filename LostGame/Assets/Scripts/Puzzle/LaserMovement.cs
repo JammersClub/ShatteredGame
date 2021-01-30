@@ -31,6 +31,12 @@ namespace Puzzle
 
         private void Update()
         {
+            if (points.Length < 2)
+            {
+                TargetPosition = points[0].point;
+                TargetRotation = Quaternion.LookRotation(points[0].direction);
+                return;
+            }
             _passedTime += Time.deltaTime;
             TargetPosition = Vector3.Lerp(points[_lastTargetPoint].point, points[_targetPoint].point, _passedTime/timeToPassEachPoint);
             if (rotateOnWay)

@@ -23,16 +23,20 @@ namespace Puzzle
         private void Update()
         {
             _lineRenderer.SetPosition(0, transform.position);
-            var ray = new Ray(transform.position, transform.up);
-            var point=transform.TransformPoint(new Vector3(0, maxLaserLen));
-            if (Physics.RaycastNonAlloc(ray, _raycastHits, maxLaserLen) > 0)
-                foreach (var hit in _raycastHits)
+            var ray = new Ray(transform.position, transform.forward);
+            var point=transform.TransformPoint(new Vector3(0, 0,maxLaserLen));
+            var hitsSize = Physics.RaycastNonAlloc(ray, _raycastHits, maxLaserLen);
+            if (hitsSize > 0)
+                for (var index = 0; index < hitsSize; index++)
                 {
-                    if (hit.collider.CompareTag("ByPassLaser")) continue;
-                    point = hit.point;
-                    OnCollision?.Invoke(hit.collider);
+                    LaserReceiverData receiver;
+                    if (_raycastHits[index].collider && (receiver = _raycastHits[index].collider.GetComponent<LaserReceiverData>()) &&
+                        !receiver.receiveLaser) continue;
+                    point = _raycastHits[index].point;
+                    OnCollision?.Invoke(_raycastHits[index].collider);
                     break;
                 }
+
             _lineRenderer.SetPosition(1, point);
         }
     }

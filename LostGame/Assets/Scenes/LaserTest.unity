@@ -134,9 +134,10 @@ GameObject:
   - component: {fileID: 1107789392}
   - component: {fileID: 1107789391}
   - component: {fileID: 1107789389}
+  - component: {fileID: 1107789390}
   m_Layer: 0
   m_Name: EndLaser ByPass
-  m_TagString: ByPassLaser
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,6 +158,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1107789390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107789388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0e9674d77e7422e9569b777ef87d5e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  receiveLaser: 0
 --- !u!65 &1107789391
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -468,6 +482,7 @@ MonoBehaviour:
   - point: {x: 6, y: 0, z: 0}
     direction: {x: 0, y: -1, z: 0}
   timeToPassEachPoint: 3
+  rotateOnWay: 0
 --- !u!23 &1420809451
 MeshRenderer:
   m_ObjectHideFlags: 0
