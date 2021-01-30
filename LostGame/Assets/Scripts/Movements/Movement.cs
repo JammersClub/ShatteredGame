@@ -27,6 +27,18 @@ namespace Movements
                 OrbitParentMovement.Create(transform, orbitOn, orbitOnCenter);
         }
 
+        public void ForceMove(Vector3 position,Quaternion rotation)
+        {
+            TargetPosition = position;
+            TargetRotation = rotation;
+            ForceMove();
+        }
+        public void ForceMove()
+        {
+            transform.position = TargetPosition;
+            transform.rotation = TargetRotation;
+        }
+
         protected virtual void FixedUpdate()
         {
             transform.position = Vector3.Lerp(transform.position, TargetPosition, Time.deltaTime * movementSpeed);

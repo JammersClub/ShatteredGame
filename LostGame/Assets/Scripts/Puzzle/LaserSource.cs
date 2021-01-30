@@ -29,11 +29,12 @@ namespace Puzzle
             if (hitsSize > 0)
                 for (var index = 0; index < hitsSize; index++)
                 {
-                    LaserReceiverData receiver;
+                    LaserReceiverData receiver = null;
                     if (_raycastHits[index].collider && (receiver = _raycastHits[index].collider.GetComponent<LaserReceiverData>()) &&
                         !receiver.receiveLaser) continue;
                     point = _raycastHits[index].point;
                     OnCollision?.Invoke(_raycastHits[index].collider);
+                    if (receiver) receiver.OnCollisionWithLaser(this);
                     break;
                 }
 
