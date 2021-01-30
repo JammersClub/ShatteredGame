@@ -8,6 +8,12 @@ namespace Puzzle
         [SerializeField] private Vector3 openPoint;
         [SerializeField] private Vector3 closePoint;
 
+        protected override void Awake()
+        {
+            openPoint = transform.TransformPoint(openPoint);
+            closePoint = transform.TransformPoint(closePoint);
+        }
+
         private bool _isOpen;
         public bool IsOpen
         {
@@ -15,7 +21,7 @@ namespace Puzzle
             set
             {
                 _isOpen = value;
-                TargetPosition = transform.TransformPoint(value ? openPoint : closePoint);
+                TargetPosition = value ? openPoint : closePoint;
             }
         }
     }

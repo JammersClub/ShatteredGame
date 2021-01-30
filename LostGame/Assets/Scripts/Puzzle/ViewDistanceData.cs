@@ -2,20 +2,23 @@
 
 namespace Puzzle
 {
-    [RequireComponent(typeof(MeshRenderer))]
+    [RequireComponent(typeof(DoorAuthoring))]
     public class ViewDistanceData:MonoBehaviour
     {
-        private MeshRenderer _meshRenderer;
+        private DoorAuthoring _doorMode;
 
         public bool Show
         {
-            get => _meshRenderer.enabled;
-            set => _meshRenderer.enabled = value;
-        }
-
-        private void Awake()
-        {
-            _meshRenderer = GetComponent<MeshRenderer>();
+            get
+            {
+                if (!_doorMode) _doorMode = GetComponent<DoorAuthoring>();
+                return _doorMode.IsOpen;
+            }
+            set
+            {
+                if (!_doorMode) _doorMode = GetComponent<DoorAuthoring>();
+                _doorMode.IsOpen = value;
+            }
         }
     }
 }
