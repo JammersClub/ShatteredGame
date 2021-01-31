@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3636446514912583457}
   m_Layer: 0
-  m_Name: Puzzle 2-Red
+  m_Name: Puzzle 1-Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2888,22 +2888,22 @@ PrefabInstance:
     - target: {fileID: 1367040214808369258, guid: 6d350923fa16ce5499adb0ef0199bf08,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1367040214808369258, guid: 6d350923fa16ce5499adb0ef0199bf08,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1367040214808369258, guid: 6d350923fa16ce5499adb0ef0199bf08,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1367040214808369258, guid: 6d350923fa16ce5499adb0ef0199bf08,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1367040214808369258, guid: 6d350923fa16ce5499adb0ef0199bf08,
         type: 3}
@@ -2913,7 +2913,7 @@ PrefabInstance:
     - target: {fileID: 1367040214808369258, guid: 6d350923fa16ce5499adb0ef0199bf08,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 1367040214808369258, guid: 6d350923fa16ce5499adb0ef0199bf08,
         type: 3}
