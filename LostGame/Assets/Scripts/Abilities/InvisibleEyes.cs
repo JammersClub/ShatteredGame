@@ -17,7 +17,7 @@ namespace Abilities
             _light = GetComponent<Light>();
             GetComponent<AbilityAssigner>().OnPlayerEnter += gm =>
             {
-                _player = GetComponent<Movement>();
+                _player = gm.GetComponent<Movement>();
                 if(!_player) return;
                 enabled = true;
                 MarkAsOk();
