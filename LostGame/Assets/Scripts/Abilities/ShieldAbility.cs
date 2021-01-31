@@ -11,14 +11,16 @@ namespace Abilities
         private LaserReceiverData _playerLr;
         private float _timer;
 
-        private void Awake()
+        protected override void Awake()
         {
             enabled = false;
             GetComponent<AbilityAssigner>().OnPlayerEnter += gm =>
             {
                 _player = gm.GetComponent<ShieldAuthoring>();
                 _playerLr = gm.GetComponent<LaserReceiverData>();
-                if(_player && _playerLr) enabled = true;
+                if (!_player || !_playerLr) return;
+                enabled = true;
+                MarkAsOk();
             };
         }
 

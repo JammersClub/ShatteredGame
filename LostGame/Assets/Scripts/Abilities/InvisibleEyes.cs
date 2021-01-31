@@ -7,13 +7,15 @@ namespace Abilities
     public class InvisibleEyes : Ability
     {
         private Light _light;
-        private void Awake()
+
+        protected override void Awake()
         {
             enabled = false;
             _light = GetComponent<Light>();
             GetComponent<AbilityAssigner>().OnPlayerEnter += gm =>
             {
                 enabled = true;
+                MarkAsOk();
             };
         }
 

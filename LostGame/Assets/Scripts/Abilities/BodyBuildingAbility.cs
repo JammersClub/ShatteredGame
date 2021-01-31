@@ -7,7 +7,7 @@ namespace Abilities
     {
         private PlayerAuthoring _player;
 
-        private void Awake()
+        protected override void Awake()
         {
             enabled = false;
             GetComponent<AbilityAssigner>().OnPlayerEnter += gm =>
@@ -16,6 +16,7 @@ namespace Abilities
                 if (!_player) return;
                 foreach (var box in BoxAuthoring.All)
                     box.Pushable = true;
+                MarkAsOk();
                 BoxAuthoring.OnNew += box =>
                 {
                     box.Pushable = true;
