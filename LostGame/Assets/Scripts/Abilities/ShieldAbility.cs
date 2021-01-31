@@ -26,7 +26,7 @@ namespace Abilities
         {
             _timer -= Time.deltaTime;
             if (_timer < 0) _timer = shieldTime * 2;
-            _playerLr.receiveLaser = _timer > shieldTime;
+            _playerLr.receiveLaser = _timer < shieldTime;
             _player.ShieldEnabled=!_playerLr.receiveLaser;
         }
     }
