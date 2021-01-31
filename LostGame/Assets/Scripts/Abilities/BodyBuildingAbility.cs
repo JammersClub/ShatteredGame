@@ -9,6 +9,7 @@ namespace Abilities
 
         protected override void Awake()
         {
+            base.Awake();
             enabled = false;
             GetComponent<AbilityAssigner>().OnPlayerEnter += gm =>
             {
