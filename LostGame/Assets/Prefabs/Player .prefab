@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3153450723789503895}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &267526265
 AudioSource:
@@ -41,7 +41,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6a7717af49cc7ae4c9ad7f62c6bb8066, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 060061ec5ca03cf4ba2007b8cb376044, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -156,7 +156,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3153450723789503895}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1075216094
 AudioSource:
@@ -288,7 +288,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 3153450723789503895}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1549923214
 MeshFilter:
@@ -505,7 +505,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3153450723789503895}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1763354826
 AudioSource:
@@ -603,6 +603,98 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &2284605450322160820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 662691755164712143}
+  - component: {fileID: 6721363388049271155}
+  m_Layer: 0
+  m_Name: Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &662691755164712143
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2284605450322160820}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3153450723789503895}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &6721363388049271155
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2284605450322160820}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &3153450723789503890
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,7 +707,6 @@ GameObject:
   - component: {fileID: 3153450723789503891}
   - component: {fileID: 3153450723789503889}
   - component: {fileID: 3153450723789503888}
-  - component: {fileID: 3153450723789503892}
   - component: {fileID: 4662622423661853486}
   - component: {fileID: 2806248246861616051}
   - component: {fileID: 7322692093180527623}
@@ -639,6 +730,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3153450724553765448}
+  - {fileID: 662691755164712143}
   - {fileID: 1549923210}
   - {fileID: 267526264}
   - {fileID: 3663042577903631413}
@@ -694,67 +786,6 @@ CapsuleCollider:
   m_Height: 1.58
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!108 &3153450723789503892
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3153450723789503890}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 2
-  m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
 --- !u!114 &4662622423661853486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -953,7 +984,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3153450723789503895}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &4370311452691711538
 AudioSource:
@@ -1066,3 +1097,4 @@ MonoBehaviour:
   playerMovement: {fileID: 3153450723789503891}
   platform: {fileID: 0}
   waterFootStepClip: {fileID: 0}
+  moveDetectionTolerance: 0.3

@@ -48,7 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 4072826535577404684}
-  platformPrefab: {fileID: 0}
+  platformPrefab: {fileID: 1792214563451133927, guid: b11e366287c0c38478f9f14551615523,
+    type: 3}
 --- !u!1 &8415926489631079852
 GameObject:
   m_ObjectHideFlags: 0
