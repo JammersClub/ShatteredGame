@@ -1,5 +1,4 @@
-﻿using System;
-using Player;
+﻿using Player;
 using UnityEngine;
 
 namespace Puzzle
@@ -13,6 +12,7 @@ namespace Puzzle
 
         protected override void Awake()
         {
+            Pushable = false;
             base.Awake();
             _rigidbody = GetComponent<Rigidbody>();
             _rigidbody.isKinematic = true;
@@ -20,11 +20,6 @@ namespace Puzzle
             if (_player) return;
             Debug.LogWarning($"{name} Can Not Find Player!");
             enabled = false;
-        }
-
-        private void Start()
-        {
-            Pushable = false;
         }
 
         private void Update()
