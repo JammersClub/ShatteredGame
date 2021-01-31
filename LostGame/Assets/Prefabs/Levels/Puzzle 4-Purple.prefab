@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4003f663043468da8a135a6847d961e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLaserLen: 15
+  maxLaserLen: 20
 --- !u!1 &1452798041822741484
 GameObject:
   m_ObjectHideFlags: 0
