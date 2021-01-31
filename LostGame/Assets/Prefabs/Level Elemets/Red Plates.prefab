@@ -283,7 +283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03b41936733424c9fb48bb809fad34a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radiusToDetectBox: 1
+  radiusToDetectBox: 1.5
   targetDoor: {fileID: 0}
-  box: {fileID: 0}
-  offset: {x: -0.5, y: 0, z: -0.5}
+  boxes: []
