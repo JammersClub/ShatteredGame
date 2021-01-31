@@ -9,7 +9,7 @@ namespace Puzzle
     public class LaserSource : MonoBehaviour
     {
         [SerializeField] private float maxLaserLen = 500;
-        [SerializeField] private int maxObjectsToDetect = 10;
+        private const int MAXObjectsToDetect = 20;
         private LineRenderer _lineRenderer;
         private RaycastHit[] _raycastHits;
         public event Action<Collider> OnCollision; 
@@ -17,7 +17,8 @@ namespace Puzzle
         private void Awake()
         {
             _lineRenderer = GetComponent<LineRenderer>();
-            _raycastHits = new RaycastHit[maxObjectsToDetect];
+            _raycastHits = new RaycastHit[MAXObjectsToDetect];
+            _lineRenderer.positionCount = 2;
         }
 
         private void Update()
