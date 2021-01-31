@@ -130,7 +130,7 @@ MonoBehaviour:
   rotationSpeed: 1
   orbitOnCenter: 0
   orbitOn: {x: 0, y: 0, z: 0}
-  offset: {x: 0, y: -0.2, z: -1}
+  offset: {x: 0, y: 2, z: 2}
 --- !u!114 &6664095580023887995
 MonoBehaviour:
   m_ObjectHideFlags: 0
