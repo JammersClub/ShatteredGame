@@ -43089,7 +43089,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6cc9bed63e135c84a87dbbbf6ac1ab17, type: 2}
+  - {fileID: 2100000, guid: b5333eca220b2ee43ac1aa9aae245121, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -53446,20 +53446,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3153450723789503889, guid: 75611386900400849ab696c8d24f1dba,
-        type: 3}
-      propertyPath: m_AngularDrag
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 3153450723789503890, guid: 75611386900400849ab696c8d24f1dba,
         type: 3}
       propertyPath: m_Name
       value: 'Player '
-      objectReference: {fileID: 0}
-    - target: {fileID: 3153450723789503891, guid: 75611386900400849ab696c8d24f1dba,
-        type: 3}
-      propertyPath: movementSpeed
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3153450723789503895, guid: 75611386900400849ab696c8d24f1dba,
         type: 3}
