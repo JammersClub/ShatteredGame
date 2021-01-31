@@ -1,5 +1,6 @@
 ﻿using Movements;
 using UnityEngine;
+// ReSharper disable ReplaceWithSingleAssignment.False
 
 namespace Player
 {
@@ -10,6 +11,7 @@ namespace Player
         [SerializeField] private Movement playerMovement;
         [SerializeField] private PlayerPlatform platform;
         [SerializeField] private AudioClip waterFootStepClip;
+        [SerializeField] private float moveDetectionTolerance=.3f;
         private AudioClip _footStepClip;
 
         private void Awake()
@@ -20,15 +22,21 @@ namespace Player
 
         private void Update()
         {
-            if(playerMovement.Velocity!=Vector3.zero && !_audioSource.isPlaying)
+            var moving = Mathf.Abs(playerMovement.Velocity.x) > moveDetectionTolerance || Mathf.Abs(playerMovement.Velocity.z) > moveDetectionTolerance;
+            switch (moving)
             {
-                if (waterFootStepClip && !platform.CurrentOrLastPlatform)
-                    _audioSource.clip = waterFootStepClip;
-                else _audioSource.clip = _footStepClip;
-                _audioSource.Play();
+                case true when !_audioSource.isPlaying:
+                {
+                    if (waterFootStepClip && !platform.CurrentOrLastPlatform)
+                        _audioSource.clip = waterFootStepClip;
+                    else _audioSource.clip = _footStepClip;
+                    _audioSource.Play();
+                    break;
+                }
+                case false when _audioSource.isPlaying:
+                    _audioSource.Stop();
+                    break;
             }
-            else if(playerMovement.Velocity==Vector3.zero && _audioSource.isPlaying)
-                _audioSource.Stop();
         }
     }
 }

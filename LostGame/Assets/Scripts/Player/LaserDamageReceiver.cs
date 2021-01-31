@@ -10,9 +10,11 @@ namespace Player
     {
         private PlayerPlatform _platform;
         private Movement _movement;
+        [SerializeField] private AudioSource takeDamageAudio;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             _platform = GetComponent<PlayerPlatform>();
             _movement = GetComponent<Movement>();
         }
@@ -24,6 +26,7 @@ namespace Player
             {
                 _movement.ForceMove(_platform.CurrentOrLastPlatform.RespawnPoint.position, _movement.TargetRotation);
                 _platform.CurrentOrLastPlatform.RePlacePlatform();
+                if(takeDamageAudio) takeDamageAudio.Play();
             }
             else
             {
