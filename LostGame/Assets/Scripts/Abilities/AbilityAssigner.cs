@@ -9,6 +9,7 @@ namespace Abilities
         [SerializeField] private float distanceToAssignToPlayer = 1f;
         [SerializeField] private bool autoDisable = true;
         private PlayerAuthoring _player;
+        [SerializeField] private AudioSource onAssignClip;
         public event Action<GameObject> OnPlayerEnter;
 
         private void Awake()
@@ -25,6 +26,7 @@ namespace Abilities
             if (Vector3.Distance(_player.transform.position, transform.position) < distanceToAssignToPlayer)
             {
                 OnPlayerEnter?.Invoke(_player.gameObject);
+                if(onAssignClip) onAssignClip.Play();
                 if(autoDisable) enabled = false;
             }
         }
