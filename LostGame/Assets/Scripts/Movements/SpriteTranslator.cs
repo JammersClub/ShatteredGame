@@ -1,5 +1,4 @@
-﻿using Movements;
-using UnityEngine;
+﻿using UnityEngine;
 
 // ReSharper disable Unity.InefficientPropertyAccess
 
@@ -7,7 +6,7 @@ using UnityEngine;
 // ReSharper disable ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator
 // ReSharper disable ConvertIfStatementToReturnStatement
 
-namespace Sprites
+namespace Movements
 {
     [RequireComponent(typeof(SpriteRenderer))]
     public class SpriteTranslator : MonoBehaviour
