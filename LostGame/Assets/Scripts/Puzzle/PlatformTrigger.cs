@@ -27,6 +27,11 @@ namespace Puzzle
             var doorModeIsOpen = _collider.bounds.Contains(_player.transform.position);
             _doorMode.IsOpen = doorModeIsOpen;
             if (doorModeIsOpen) _player.CurrentOrLastPlatform = _platformAuthoring;
+            else if (_player.CurrentOrLastPlatform == _platformAuthoring)
+            {
+                _player.CurrentOrLastPlatform = null;
+                _platformAuthoring.RePlacePlatform();
+            }
         }
     }
 }
