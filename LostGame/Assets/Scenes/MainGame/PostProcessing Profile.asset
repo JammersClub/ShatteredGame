@@ -15,7 +15,7 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   color:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: {r: 0, g: 0, b: 0, a: 1}
     hdr: 0
     showAlpha: 0
@@ -25,7 +25,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.359
+    m_Value: 0.6
     min: 0
     max: 1
   smoothness:
@@ -52,7 +52,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.133
+    m_Value: 0.6
     min: 0
     max: 1
 --- !u!114 &11400000
@@ -91,12 +91,12 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.699
+    m_Value: 0.6
     min: 0
     max: 1
   response:
     m_OverrideState: 0
-    m_Value: 0.236
+    m_Value: 0.567
     min: 0
     max: 1
   texture:
@@ -118,11 +118,11 @@ MonoBehaviour:
   m_AdvancedMode: 0
   threshold:
     m_OverrideState: 1
-    m_Value: 0.76
+    m_Value: 0.8
     min: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 2.62
+    m_Value: 3
     min: 0
   scatter:
     m_OverrideState: 1

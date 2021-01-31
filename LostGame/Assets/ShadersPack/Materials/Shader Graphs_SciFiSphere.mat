@@ -33,11 +33,11 @@ Material:
     - Vector1_E3D3E36F: 1.09
     - Vector1_FA4FF360: 0.47
     - _Color: 1
-    - _VertexOffset: 0.25
+    - _VertexOffset: 0.06
     - _power: 2.84
     m_Colors:
     - Color_7612191: {r: 4, g: 0, b: 0.078431375, a: 0}
     - Color_E44B9063: {r: 0.025190217, g: 0.9273663, b: 5.3403134, a: 0}
     - _Color: {r: 0, g: 0.086771354, b: 0.5346242, a: 0}
-    - _Color1: {r: 2.187099, g: 2.187099, b: 2.187099, a: 0}
+    - _Color1: {r: 0, g: 2.9199493, b: 2.4262094, a: 0}
     - _Color_1: {r: 0, g: 2.462745, b: 4, a: 0}
