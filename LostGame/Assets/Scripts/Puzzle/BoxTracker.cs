@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Puzzle
 {
@@ -8,7 +7,6 @@ namespace Puzzle
         [SerializeField] private float radiusToDetectBox = 1f;
         [SerializeField] private DoorAuthoring targetDoor;
         [SerializeField] private BoxAuthoring[] boxes;
-        [SerializeField] private Vector3 offset;
 
         private bool _hasMeshRenderer;
         private MeshRenderer _renderer;
