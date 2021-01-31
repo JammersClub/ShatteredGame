@@ -360,4 +360,4 @@ MonoBehaviour:
   orbitOn: {x: 0, y: 0, z: 0}
   openPoint: {x: 0, y: -5, z: 0}
   closePoint: {x: 0, y: 0, z: 0}
-  removeParent: 1
+  autoRemoveParent: 0
