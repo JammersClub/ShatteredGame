@@ -1,36 +1,20 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 namespace Puzzle
 {
-    public class BoxTracker : MonoBehaviour, ICorrectPosition
+    [RequireComponent(typeof(BoxCollider))]
+    public class BoxTracker : MonoBehaviour
     {
-        [SerializeField] private float radiusToDetectBox = 1f;
         [SerializeField] private DoorAuthoring targetDoor;
         [SerializeField] private BoxAuthoring[] boxes;
-
-        private bool _hasMeshRenderer;
-        private MeshRenderer _renderer;
-
-        private void Awake()
+        private void OnTriggerEnter(Collider other)
         {
-            _renderer = GetComponent<MeshRenderer>();
-            _hasMeshRenderer = _renderer;
+            if(boxes.Any(box => other.gameObject == box.gameObject)) targetDoor.IsOpen = true;
         }
-
-        private void Update()
+        private void OnTriggerExit(Collider other)
         {
-            //box is in place
-            // ReSharper disable once LoopCanBeConvertedToQuery
-            foreach (var box in boxes)
-                if (Vector3.Distance(box.Center, Center) < radiusToDetectBox)
-                {
-                    targetDoor.IsOpen = true;
-                    return;
-                }
-
-            targetDoor.IsOpen = false;
+            if(boxes.Any(box => other.gameObject == box.gameObject)) targetDoor.IsOpen = false;
         }
-
-        public Vector3 Center => _hasMeshRenderer ? _renderer.bounds.center : transform.position;
     }
 }
