@@ -10,13 +10,13 @@ using UnityEngine;
 namespace Sprites
 {
     [RequireComponent(typeof(SpriteRenderer))]
-    [RequireComponent(typeof(Animator))]
     public class SpriteTranslator : MonoBehaviour
     {
         private static readonly int Vertical = Animator.StringToHash("Vertical");
         private static readonly int Horizontal = Animator.StringToHash("Horizontal");
         [SerializeField] private Movement targetMovement;
         private Animator _animator;
+        private bool _hasAnimator;
         private Transform _cameraTransform;
         private float _lastAngle;
 
@@ -25,11 +25,13 @@ namespace Sprites
             // ReSharper disable once PossibleNullReferenceException
             _cameraTransform = Camera.main.transform;
             _animator = GetComponent<Animator>();
+            _hasAnimator = _animator;
         }
 
         private void Update()
         {
             transform.rotation = Quaternion.LookRotation(_cameraTransform.forward, Vector3.up);
+            if(!_hasAnimator) return;
             var targetMovementVelocity = _cameraTransform.TransformDirection(targetMovement.Velocity);
             _animator.SetFloat(Vertical, -targetMovementVelocity.x);
             _animator.SetFloat(Horizontal, targetMovementVelocity.z);
