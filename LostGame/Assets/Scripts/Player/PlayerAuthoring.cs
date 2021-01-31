@@ -4,6 +4,5 @@ namespace Player
 {
     public class PlayerAuthoring : MonoBehaviour
     {
-        
     }
 }

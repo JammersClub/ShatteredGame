@@ -27,22 +27,23 @@ namespace Movements
                 OrbitParentMovement.Create(transform, orbitOn, orbitOnCenter);
         }
 
-        public void ForceMove(Vector3 position,Quaternion rotation)
+        protected virtual void FixedUpdate()
+        {
+            transform.position = Vector3.Lerp(transform.position, TargetPosition, Time.deltaTime * movementSpeed);
+            transform.rotation = Quaternion.Lerp(transform.rotation, TargetRotation, Time.deltaTime * rotationSpeed);
+        }
+
+        public void ForceMove(Vector3 position, Quaternion rotation)
         {
             TargetPosition = position;
             TargetRotation = rotation;
             ForceMove();
         }
+
         public void ForceMove()
         {
             transform.position = TargetPosition;
             transform.rotation = TargetRotation;
-        }
-
-        protected virtual void FixedUpdate()
-        {
-            transform.position = Vector3.Lerp(transform.position, TargetPosition, Time.deltaTime * movementSpeed);
-            transform.rotation = Quaternion.Lerp(transform.rotation, TargetRotation, Time.deltaTime * rotationSpeed);
         }
 
         [RequireComponent(typeof(Rigidbody))]
@@ -51,23 +52,22 @@ namespace Movements
             [Tooltip("By Pass Y Axis")] [SerializeField]
             private bool bypassGravityAxis = true;
 
-            private Rigidbody _rigidbody;
+            public Rigidbody Rigidbody { get; private set; }
 
-            public Rigidbody Rigidbody => _rigidbody;
-            public override Vector3 Velocity => _rigidbody.velocity;
+            public override Vector3 Velocity => Rigidbody.velocity;
 
             protected override void Awake()
             {
                 base.Awake();
-                _rigidbody = GetComponent<Rigidbody>();
+                Rigidbody = GetComponent<Rigidbody>();
             }
 
             protected override void FixedUpdate()
             {
-                var position = Vector3.Lerp(_rigidbody.position, TargetPosition, Time.deltaTime * RotationSpeed);
-                if (bypassGravityAxis) position.y = _rigidbody.position.y;
-                _rigidbody.MovePosition(position);
-                _rigidbody.MoveRotation(Quaternion.Lerp(transform.rotation, TargetRotation,
+                var position = Vector3.Lerp(Rigidbody.position, TargetPosition, Time.deltaTime * RotationSpeed);
+                if (bypassGravityAxis) position.y = Rigidbody.position.y;
+                Rigidbody.MovePosition(position);
+                Rigidbody.MoveRotation(Quaternion.Lerp(transform.rotation, TargetRotation,
                     Time.deltaTime * RotationSpeed));
             }
         }

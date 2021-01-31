@@ -15,8 +15,8 @@ namespace Movements
         private static readonly int Horizontal = Animator.StringToHash("Horizontal");
         [SerializeField] private Movement targetMovement;
         private Animator _animator;
-        private bool _hasAnimator;
         private Transform _cameraTransform;
+        private bool _hasAnimator;
         private float _lastAngle;
 
         private void Awake()
@@ -30,7 +30,7 @@ namespace Movements
         private void Update()
         {
             transform.rotation = Quaternion.LookRotation(_cameraTransform.forward, Vector3.up);
-            if(!_hasAnimator) return;
+            if (!_hasAnimator) return;
             var targetMovementVelocity = _cameraTransform.TransformDirection(targetMovement.Velocity);
             _animator.SetFloat(Vertical, -targetMovementVelocity.x);
             _animator.SetFloat(Horizontal, targetMovementVelocity.z);

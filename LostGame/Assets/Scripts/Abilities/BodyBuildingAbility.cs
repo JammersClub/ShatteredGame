@@ -18,10 +18,7 @@ namespace Abilities
                 foreach (var box in BoxAuthoring.All)
                     box.Pushable = true;
                 MarkAsOk();
-                BoxAuthoring.OnNew += box =>
-                {
-                    box.Pushable = true;
-                };
+                BoxAuthoring.OnNew += box => { box.Pushable = true; };
             };
         }
     }

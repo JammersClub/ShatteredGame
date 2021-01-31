@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using UnityEngine;
+
 // ReSharper disable Unity.PreferNonAllocApi
 
 // ReSharper disable Unity.InefficientPropertyAccess
@@ -12,7 +13,6 @@ namespace Puzzle
     {
         [SerializeField] private float maxLaserLen = 500;
         private LineRenderer _lineRenderer;
-        public event Action<Collider> OnCollision; 
 
         private void Awake()
         {
@@ -24,7 +24,7 @@ namespace Puzzle
         {
             _lineRenderer.SetPosition(0, transform.position);
             var ray = new Ray(transform.position, transform.forward);
-            var point=transform.TransformPoint(new Vector3(0, 0,maxLaserLen));
+            var point = transform.TransformPoint(new Vector3(0, 0, maxLaserLen));
             var raycastHits = Physics.RaycastAll(ray, maxLaserLen).ToList();
             raycastHits.Sort((a, b) => a.distance.CompareTo(b.distance));
             if (raycastHits.Count > 0)
@@ -41,5 +41,7 @@ namespace Puzzle
 
             _lineRenderer.SetPosition(1, point);
         }
+
+        public event Action<Collider> OnCollision;
     }
 }

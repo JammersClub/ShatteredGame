@@ -1,17 +1,18 @@
 ﻿using Movements;
 using UnityEngine;
+
 // ReSharper disable ReplaceWithSingleAssignment.False
 
 namespace Player
 {
     [RequireComponent(typeof(AudioSource))]
-    public class PlayerFootStepAudioController:MonoBehaviour
+    public class PlayerFootStepAudioController : MonoBehaviour
     {
-        private AudioSource _audioSource;
         [SerializeField] private Movement playerMovement;
         [SerializeField] private PlayerPlatform platform;
         [SerializeField] private AudioClip waterFootStepClip;
-        [SerializeField] private float moveDetectionTolerance=.3f;
+        [SerializeField] private float moveDetectionTolerance = .3f;
+        private AudioSource _audioSource;
         private AudioClip _footStepClip;
 
         private void Awake()
@@ -22,7 +23,8 @@ namespace Player
 
         private void Update()
         {
-            var moving = Mathf.Abs(playerMovement.Velocity.x) > moveDetectionTolerance || Mathf.Abs(playerMovement.Velocity.z) > moveDetectionTolerance;
+            var moving = Mathf.Abs(playerMovement.Velocity.x) > moveDetectionTolerance ||
+                         Mathf.Abs(playerMovement.Velocity.z) > moveDetectionTolerance;
             if (waterFootStepClip && !platform.CurrentOrLastPlatform)
                 _audioSource.clip = waterFootStepClip;
             else _audioSource.clip = _footStepClip;

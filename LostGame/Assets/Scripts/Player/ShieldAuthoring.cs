@@ -4,12 +4,13 @@ using UnityEngine;
 namespace Player
 {
     [RequireComponent(typeof(LaserReceiverData))]
-    public class ShieldAuthoring:MonoBehaviour
+    public class ShieldAuthoring : MonoBehaviour
     {
         [SerializeField] private GameObject shieldObject;
         [SerializeField] private AudioSource shieldAudio;
 
-        private bool _shieldEnabled=true;
+        private bool _shieldEnabled = true;
+
         public bool ShieldEnabled
         {
             get => _shieldEnabled;
@@ -18,7 +19,7 @@ namespace Player
                 if (_shieldEnabled != value)
                 {
                     shieldObject.SetActive(value);
-                    if(value)
+                    if (value)
                         shieldAudio.Play();
                 }
 

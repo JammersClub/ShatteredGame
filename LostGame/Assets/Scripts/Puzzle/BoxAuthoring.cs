@@ -4,15 +4,13 @@ using UnityEngine;
 namespace Puzzle
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class BoxAuthoring : GatherBehaviour<BoxAuthoring>,ICorrectPosition
+    public class BoxAuthoring : GatherBehaviour<BoxAuthoring>, ICorrectPosition
     {
         [SerializeField] private float distanceToAssignToPlayer = 1f;
-        private PlayerAuthoring _player;
-        private Rigidbody _rigidbody;
         private bool _hasMeshRenderer;
+        private PlayerAuthoring _player;
         private MeshRenderer _renderer;
-
-        public Vector3 Center => _hasMeshRenderer ? _renderer.bounds.center : transform.position;
+        private Rigidbody _rigidbody;
 
         public bool Pushable { get; set; }
 
@@ -37,5 +35,7 @@ namespace Puzzle
                 _rigidbody.isKinematic = !Pushable;
             else _rigidbody.isKinematic = true;
         }
+
+        public Vector3 Center => _hasMeshRenderer ? _renderer.bounds.center : transform.position;
     }
 }

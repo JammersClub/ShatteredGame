@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// to get objects like ECS
+///     to get objects like ECS
 /// </summary>
 public abstract class GatherBehaviour<T> : MonoBehaviour where T : class
 {
-    private static readonly List<T> Behaviours=new List<T>();
+    private static readonly List<T> Behaviours = new List<T>();
     public static T[] All { get; private set; } = new T[0];
-    public static event Action<T> OnNew; 
 
     protected virtual void Awake()
     {
@@ -22,4 +21,6 @@ public abstract class GatherBehaviour<T> : MonoBehaviour where T : class
     {
         Behaviours.Remove(this as T);
     }
+
+    public static event Action<T> OnNew;
 }

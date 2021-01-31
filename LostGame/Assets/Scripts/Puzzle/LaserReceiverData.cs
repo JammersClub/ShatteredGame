@@ -2,7 +2,7 @@
 
 namespace Puzzle
 {
-    public class LaserReceiverData:MonoBehaviour
+    public class LaserReceiverData : MonoBehaviour
     {
         [SerializeField] public bool receiveLaser;
         [SerializeField] private AudioSource getCollisionAudio;
@@ -15,7 +15,7 @@ namespace Puzzle
 
         public virtual void OnCollisionWithLaser(LaserSource laserSource)
         {
-            if(_hasAudio) getCollisionAudio.Play();
+            if (_hasAudio) getCollisionAudio.Play();
         }
     }
 }

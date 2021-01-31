@@ -2,7 +2,7 @@
 
 namespace Puzzle
 {
-    public class BoxTracker : MonoBehaviour,ICorrectPosition
+    public class BoxTracker : MonoBehaviour, ICorrectPosition
     {
         [SerializeField] private float radiusToDetectBox = 1f;
         [SerializeField] private DoorAuthoring targetDoor;
@@ -17,13 +17,12 @@ namespace Puzzle
             _hasMeshRenderer = _renderer;
         }
 
-        public Vector3 Center => _hasMeshRenderer ? _renderer.bounds.center : transform.position;
         private void Update()
         {
             //box is in place
             // ReSharper disable once LoopCanBeConvertedToQuery
             foreach (var box in boxes)
-                if(Vector3.Distance(box.Center, Center) < radiusToDetectBox)
+                if (Vector3.Distance(box.Center, Center) < radiusToDetectBox)
                 {
                     targetDoor.IsOpen = true;
                     return;
@@ -31,6 +30,7 @@ namespace Puzzle
 
             targetDoor.IsOpen = false;
         }
-        
+
+        public Vector3 Center => _hasMeshRenderer ? _renderer.bounds.center : transform.position;
     }
 }

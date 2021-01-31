@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Player
 {
-    public class PlayerPlatform:MonoBehaviour
+    public class PlayerPlatform : MonoBehaviour
     {
         [NonSerialized] public PlatformAuthoring CurrentOrLastPlatform;
     }

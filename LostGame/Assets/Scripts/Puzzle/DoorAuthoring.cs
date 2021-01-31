@@ -9,16 +9,8 @@ namespace Puzzle
         [SerializeField] private Vector3 closePoint;
         [SerializeField] private bool autoRemoveParent;
 
-        protected override void Awake()
-        {
-            base.Awake();
-            if(autoRemoveParent) transform.parent = null;
-            openPoint = transform.TransformPoint(openPoint);
-            closePoint = transform.TransformPoint(closePoint);
-            _isOpen = false;
-        }
-
         private bool _isOpen;
+
         public bool IsOpen
         {
             get => _isOpen;
@@ -27,6 +19,15 @@ namespace Puzzle
                 _isOpen = value;
                 TargetPosition = value ? openPoint : closePoint;
             }
+        }
+
+        protected override void Awake()
+        {
+            base.Awake();
+            if (autoRemoveParent) transform.parent = null;
+            openPoint = transform.TransformPoint(openPoint);
+            closePoint = transform.TransformPoint(closePoint);
+            _isOpen = false;
         }
     }
 }

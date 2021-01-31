@@ -6,7 +6,9 @@ namespace Abilities
 {
     public sealed class ShieldAbility : Ability
     {
-        [Tooltip("In Seconds.")] [SerializeField] private float shieldTime=5;
+        [Tooltip("In Seconds.")] [SerializeField]
+        private float shieldTime = 5;
+
         private ShieldAuthoring _player;
         private LaserReceiverData _playerLr;
         private float _timer;
@@ -30,7 +32,7 @@ namespace Abilities
             _timer -= Time.deltaTime;
             if (_timer < 0) _timer = shieldTime * 2;
             _playerLr.receiveLaser = _timer < shieldTime;
-            _player.ShieldEnabled=!_playerLr.receiveLaser;
+            _player.ShieldEnabled = !_playerLr.receiveLaser;
         }
     }
 }

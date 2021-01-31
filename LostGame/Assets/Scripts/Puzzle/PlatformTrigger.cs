@@ -5,12 +5,12 @@ namespace Puzzle
 {
     [RequireComponent(typeof(BoxCollider))]
     [RequireComponent(typeof(DoorAuthoring))]
-    public class PlatformTrigger:MonoBehaviour
+    public class PlatformTrigger : MonoBehaviour
     {
         private BoxCollider _collider;
         private DoorAuthoring _doorMode;
-        private PlayerPlatform _player;
         private PlatformAuthoring _platformAuthoring;
+        private PlayerPlatform _player;
 
 
         private void Awake()
@@ -26,7 +26,10 @@ namespace Puzzle
         {
             var doorModeIsOpen = _collider.bounds.Contains(_player.transform.position);
             _doorMode.IsOpen = doorModeIsOpen;
-            if (doorModeIsOpen) _player.CurrentOrLastPlatform = _platformAuthoring;
+            if (doorModeIsOpen)
+            {
+                _player.CurrentOrLastPlatform = _platformAuthoring;
+            }
             else if (_player.CurrentOrLastPlatform == _platformAuthoring)
             {
                 _player.CurrentOrLastPlatform = null;

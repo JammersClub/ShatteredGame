@@ -8,13 +8,12 @@ namespace Abilities
     {
         [SerializeField] private float distanceToAssignToPlayer = 1f;
         [SerializeField] private bool autoDisable = true;
-        private PlayerAuthoring _player;
         [SerializeField] private AudioSource onAssignClip;
-        public event Action<GameObject> OnPlayerEnter;
+        private PlayerAuthoring _player;
 
         private void Awake()
         {
-            _player=FindObjectOfType<PlayerAuthoring>();
+            _player = FindObjectOfType<PlayerAuthoring>();
             if (_player) return;
             Debug.LogWarning($"{name} Can Not Find Player!");
             enabled = false;
@@ -26,10 +25,11 @@ namespace Abilities
             if (Vector3.Distance(_player.transform.position, transform.position) < distanceToAssignToPlayer)
             {
                 OnPlayerEnter?.Invoke(_player.gameObject);
-                if(onAssignClip) onAssignClip.Play();
-                if(autoDisable) enabled = false;
+                if (onAssignClip) onAssignClip.Play();
+                if (autoDisable) enabled = false;
             }
         }
-        
+
+        public event Action<GameObject> OnPlayerEnter;
     }
 }
