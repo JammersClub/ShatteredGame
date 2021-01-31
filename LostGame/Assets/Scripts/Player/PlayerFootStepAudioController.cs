@@ -23,17 +23,17 @@ namespace Player
         private void Update()
         {
             var moving = Mathf.Abs(playerMovement.Velocity.x) > moveDetectionTolerance || Mathf.Abs(playerMovement.Velocity.z) > moveDetectionTolerance;
+            if (waterFootStepClip && !platform.CurrentOrLastPlatform)
+                _audioSource.clip = waterFootStepClip;
+            else _audioSource.clip = _footStepClip;
             switch (moving)
             {
                 case true when !_audioSource.isPlaying:
                 {
-                    if (waterFootStepClip && !platform.CurrentOrLastPlatform)
-                        _audioSource.clip = waterFootStepClip;
-                    else _audioSource.clip = _footStepClip;
                     _audioSource.Play();
                     break;
                 }
-                case false when _audioSource.isPlaying:
+                case false:
                     _audioSource.Stop();
                     break;
             }
