@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 7912325441972346262}
   - component: {fileID: 7912325441972346256}
   - component: {fileID: 7912325441972346257}
+  - component: {fileID: 1927148482}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -170,3 +171,11 @@ MonoBehaviour:
   orbitOnCenter: 0
   orbitOn: {x: 0, y: 0, z: 0}
   offset: {x: 0, y: 0, z: 0}
+--- !u!81 &1927148482
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7912325441972346263}
+  m_Enabled: 1
