@@ -14,42 +14,58 @@ namespace Movements
         [NonSerialized] public Vector3 TargetPosition;
         [NonSerialized] public Quaternion TargetRotation;
 
-        public Vector3 MovementDirection => TargetPosition-transform.position;
-        public float DistanceToTarget => Vector3.Distance(TargetPosition,transform.position);
+        public float DistanceToTarget => Vector3.Distance(TargetPosition, transform.position);
         protected float MovementSpeed => movementSpeed;
         protected float RotationSpeed => rotationSpeed;
+        public virtual Vector3 Velocity => TargetPosition - transform.position;
 
         protected virtual void Awake()
         {
             TargetPosition = transform.position;
             TargetRotation = transform.rotation;
-            if(orbitOnCenter!=0)
+            if (orbitOnCenter != 0)
                 OrbitParentMovement.Create(transform, orbitOn, orbitOnCenter);
         }
 
-        private void FixedUpdate()
+        public void ForceMove(Vector3 position,Quaternion rotation)
+        {
+            TargetPosition = position;
+            TargetRotation = rotation;
+            ForceMove();
+        }
+        public void ForceMove()
+        {
+            transform.position = TargetPosition;
+            transform.rotation = TargetRotation;
+        }
+
+        protected virtual void FixedUpdate()
         {
             transform.position = Vector3.Lerp(transform.position, TargetPosition, Time.deltaTime * movementSpeed);
             transform.rotation = Quaternion.Lerp(transform.rotation, TargetRotation, Time.deltaTime * rotationSpeed);
         }
-        
+
         [RequireComponent(typeof(Rigidbody))]
         public abstract class Physical : Movement
         {
-            [Tooltip("By Pass Z Axis")] [SerializeField] private bool bypassGravityAxis = true;
+            [Tooltip("By Pass Y Axis")] [SerializeField]
+            private bool bypassGravityAxis = true;
+
             private Rigidbody _rigidbody;
+
+            public Rigidbody Rigidbody => _rigidbody;
+            public override Vector3 Velocity => _rigidbody.velocity;
 
             protected override void Awake()
             {
                 base.Awake();
-                Physics.gravity=Vector3.forward;
                 _rigidbody = GetComponent<Rigidbody>();
             }
 
-            private new void FixedUpdate()
+            protected override void FixedUpdate()
             {
                 var position = Vector3.Lerp(_rigidbody.position, TargetPosition, Time.deltaTime * RotationSpeed);
-                if(bypassGravityAxis) position.z = _rigidbody.position.z;
+                if (bypassGravityAxis) position.y = _rigidbody.position.y;
                 _rigidbody.MovePosition(position);
                 _rigidbody.MoveRotation(Quaternion.Lerp(transform.rotation, TargetRotation,
                     Time.deltaTime * RotationSpeed));
