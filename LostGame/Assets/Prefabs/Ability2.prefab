@@ -65,6 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceToAssignToPlayer: 1
+  autoDisable: 1
 --- !u!108 &-6589671071023567068
 Light:
   m_ObjectHideFlags: 0
@@ -139,6 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shieldTime: 5
+  shieldAudioClip: {fileID: 8300000, guid: d6ebed33f7861054091925c43b985dfc, type: 3}
 --- !u!1 &962219748423476767
 GameObject:
   m_ObjectHideFlags: 0
