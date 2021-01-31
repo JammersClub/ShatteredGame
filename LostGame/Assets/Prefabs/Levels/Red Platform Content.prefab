@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4639002783902264150}
   - component: {fileID: 2370876257999328776}
   - component: {fileID: 7926977730820217444}
+  - component: {fileID: 8995177623384929060}
   m_Layer: 0
   m_Name: Red Platform Content
   m_TagString: Untagged
@@ -80,6 +81,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b640a1b2944418d875cb2b7fab833d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8995177623384929060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7059401840112957940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331803fd5b734828a0791b9fb120c020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  managerAuthoring: {fileID: 0}
 --- !u!1 &7390291331026189426
 GameObject:
   m_ObjectHideFlags: 0

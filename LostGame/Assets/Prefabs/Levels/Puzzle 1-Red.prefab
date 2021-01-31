@@ -47,7 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 1034441662173119881}
-  platformPrefab: {fileID: 8605246019274158239}
+  platformPrefab: {fileID: 8995177623384929060, guid: 64ca1e567f0ee3f4c9d14459d17eb125,
+    type: 3}
 --- !u!1 &8978810355171423982
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,12 +1073,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64ca1e567f0ee3f4c9d14459d17eb125, type: 3}
---- !u!1 &8605246019274158239 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7059401840112957940, guid: 64ca1e567f0ee3f4c9d14459d17eb125,
-    type: 3}
-  m_PrefabInstance: {fileID: 1626909127341361515}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2853564942715872908 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3533662185501994983, guid: 64ca1e567f0ee3f4c9d14459d17eb125,

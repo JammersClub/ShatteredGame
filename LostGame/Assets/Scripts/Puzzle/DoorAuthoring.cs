@@ -7,7 +7,7 @@ namespace Puzzle
     {
         [SerializeField] private Vector3 openPoint;
         [SerializeField] private Vector3 closePoint;
-        [SerializeField] private bool removeParent = true;
+        private bool removeParent = false;
 
         protected override void Awake()
         {
