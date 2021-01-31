@@ -1,24 +1,24 @@
-﻿using Puzzle;
+﻿using Movements;
+using Puzzle;
 using UnityEngine;
 
 namespace Abilities
 {
     [RequireComponent(typeof(Light))]
-    public class InvisibleEyes : Ability, ICorrectPosition
+    public class InvisibleEyes : Ability
     {
-        private bool _hasMeshRenderer;
         private Light _light;
-        private MeshRenderer _renderer;
+        private Movement _player;
 
         protected override void Awake()
         {
             base.Awake();
-            _renderer = GetComponent<MeshRenderer>();
-            _hasMeshRenderer = _renderer;
             enabled = false;
             _light = GetComponent<Light>();
             GetComponent<AbilityAssigner>().OnPlayerEnter += gm =>
             {
+                _player = GetComponent<Movement>();
+                if(!_player) return;
                 enabled = true;
                 MarkAsOk();
             };
@@ -27,9 +27,7 @@ namespace Abilities
         private void Update()
         {
             foreach (var target in ViewDistanceData.All)
-                target.Show = Vector3.Distance(Center, target.Center) < _light.range;
+                target.Show = Vector3.Distance(_player.transform.position, target.Center) < _light.range;
         }
-
-        public Vector3 Center => _hasMeshRenderer ? _renderer.bounds.center : transform.position;
     }
 }
