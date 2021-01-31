@@ -509,6 +509,11 @@ PrefabInstance:
       propertyPath: boxes.Array.data[0]
       value: 
       objectReference: {fileID: 6413063151396254843}
+    - target: {fileID: 5640262010476969854, guid: 582f1b1ccce456d489176a3e982c9cd0,
+        type: 3}
+      propertyPath: movementSpeed
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5739543886711716695, guid: 582f1b1ccce456d489176a3e982c9cd0,
         type: 3}
       propertyPath: m_Mesh
