@@ -10,6 +10,7 @@ namespace Abilities
 
         protected override void Awake()
         {
+            base.Awake();
             enabled = false;
             _light = GetComponent<Light>();
             GetComponent<AbilityAssigner>().OnPlayerEnter += gm =>
