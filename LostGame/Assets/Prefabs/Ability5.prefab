@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 376dfcc003a331c43b1222d4427c342a, type: 2}
+  - {fileID: 2100000, guid: 1980449c11c676a4685528c703375a01, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -129,7 +129,7 @@ MonoBehaviour:
   rotationSpeed: 1
   orbitOnCenter: 0
   orbitOn: {x: 0, y: 0, z: 0}
-  offset: {x: 0, y: -0.2, z: -1}
+  offset: {x: 2, y: 2, z: -2}
 --- !u!114 &6664095580023887995
 MonoBehaviour:
   m_ObjectHideFlags: 0
