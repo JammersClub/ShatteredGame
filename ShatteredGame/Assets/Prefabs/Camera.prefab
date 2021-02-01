@@ -72,7 +72,7 @@ Camera:
   m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 0
+  m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!114 &7912325441665144903
@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceToAssignToPlayer: 100
   autoDisable: 1
+  onAssignClip: {fileID: 0}
 --- !u!114 &7912325441972346257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,8 +169,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 10
   rotationSpeed: 0
-  orbitOnCenter: 0
-  orbitOn: {x: 0, y: 0, z: 0}
   offset: {x: 0, y: 0, z: 0}
 --- !u!81 &1927148482
 AudioListener:
