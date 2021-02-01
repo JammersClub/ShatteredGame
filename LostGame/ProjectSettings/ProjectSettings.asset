@@ -16,7 +16,7 @@ PlayerSettings:
   productName: Shattered
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
+  m_SplashScreenBackgroundColor: {r: 0.090824135, g: 0.10275625, b: 0.122641504, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
@@ -42,6 +42,8 @@ PlayerSettings:
   m_SplashScreenLogos:
   - logo: {fileID: 10404, guid: 0000000000000000e000000000000000, type: 0}
     duration: 2.5
+  - logo: {fileID: 21300000, guid: 44f3f34bfe916d7438d86ef633b37b0e, type: 3}
+    duration: 4
   - logo: {fileID: 21300000, guid: 7c99ccdf82b407240991fcd6363128a1, type: 3}
     duration: 2
   - logo: {fileID: 21300000, guid: a6317cc73c6e95248afad4d84f1edafa, type: 3}
@@ -53,9 +55,9 @@ PlayerSettings:
   - logo: {fileID: 21300000, guid: d74b39e7ca7afbd42a51d96785e0b346, type: 3}
     duration: 2
   - logo: {fileID: 21300000, guid: 5c8135616b5d3cf47ae1903633edf17b, type: 3}
+    duration: 3
+  - logo: {fileID: 0}
     duration: 2
-  - logo: {fileID: 21300000, guid: 44f3f34bfe916d7438d86ef633b37b0e, type: 3}
-    duration: 4
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1280
@@ -553,7 +555,7 @@ PlayerSettings:
   monoEnv: 
   splashScreenBackgroundSourceLandscape: {fileID: 0}
   splashScreenBackgroundSourcePortrait: {fileID: 0}
-  blurSplashScreenBackground: 1
+  blurSplashScreenBackground: 0
   spritePackerPolicy: 
   webGLMemorySize: 16
   webGLExceptionSupport: 1
