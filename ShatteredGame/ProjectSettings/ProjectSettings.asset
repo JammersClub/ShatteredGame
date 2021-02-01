@@ -142,7 +142,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.3
+  bundleVersion: 0.31
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -188,8 +188,8 @@ PlayerSettings:
   applicationIdentifier: {}
   buildNumber:
     Standalone: 1
-  AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 19
+  AndroidBundleVersionCode: 2
+  AndroidMinSdkVersion: 21
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 

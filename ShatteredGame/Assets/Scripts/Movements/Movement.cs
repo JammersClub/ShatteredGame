@@ -9,8 +9,6 @@ namespace Movements
     {
         [SerializeField] private float movementSpeed = 1;
         [SerializeField] private float rotationSpeed = 1;
-        [SerializeField] private float orbitOnCenter;
-        [SerializeField] private Vector3 orbitOn;
         [NonSerialized] public Vector3 TargetPosition;
         [NonSerialized] public Quaternion TargetRotation;
 
@@ -23,8 +21,6 @@ namespace Movements
         {
             TargetPosition = transform.position;
             TargetRotation = transform.rotation;
-            if (orbitOnCenter != 0)
-                OrbitParentMovement.Create(transform, orbitOn, orbitOnCenter);
         }
 
         protected virtual void FixedUpdate()
