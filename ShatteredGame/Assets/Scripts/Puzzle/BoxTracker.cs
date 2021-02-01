@@ -8,13 +8,22 @@ namespace Puzzle
     {
         [SerializeField] private DoorAuthoring targetDoor;
         [SerializeField] private BoxAuthoring[] boxes;
+        [SerializeField] private AudioSource openCloseAudio;
         private void OnTriggerEnter(Collider other)
         {
-            if(boxes.Any(box => other.gameObject == box.gameObject)) targetDoor.IsOpen = true;
+            if(targetDoor.IsOpen) return;
+            if (boxes.All(box => other.gameObject != box.gameObject)) return;
+            targetDoor.IsOpen = true;
+            openCloseAudio.Stop();
+            openCloseAudio.Play();
         }
         private void OnTriggerExit(Collider other)
         {
-            if(boxes.Any(box => other.gameObject == box.gameObject)) targetDoor.IsOpen = false;
+            if(!targetDoor.IsOpen) return;
+            if (boxes.All(box => other.gameObject != box.gameObject)) return;
+            targetDoor.IsOpen = false;
+            openCloseAudio.Stop();
+            openCloseAudio.Play();
         }
     }
 }
