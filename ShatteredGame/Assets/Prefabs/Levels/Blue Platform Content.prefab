@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1105985128452247682}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2828,6 +2828,16 @@ PrefabInstance:
       propertyPath: targetDoor
       value: 
       objectReference: {fileID: 125982111973153079}
+    - target: {fileID: 476052696042376279, guid: eca43cb21605d634dbf663510d33e3cd,
+        type: 3}
+      propertyPath: boxes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 476052696042376279, guid: eca43cb21605d634dbf663510d33e3cd,
+        type: 3}
+      propertyPath: boxes.Array.data[0]
+      value: 
+      objectReference: {fileID: 8490961926342313952}
     - target: {fileID: 2123981154922201858, guid: eca43cb21605d634dbf663510d33e3cd,
         type: 3}
       propertyPath: m_Mesh
@@ -3778,6 +3788,16 @@ PrefabInstance:
       propertyPath: targetDoor
       value: 
       objectReference: {fileID: 4160872937313952513}
+    - target: {fileID: 476052696042376279, guid: eca43cb21605d634dbf663510d33e3cd,
+        type: 3}
+      propertyPath: boxes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 476052696042376279, guid: eca43cb21605d634dbf663510d33e3cd,
+        type: 3}
+      propertyPath: boxes.Array.data[0]
+      value: 
+      objectReference: {fileID: 8384674515337815363}
     - target: {fileID: 2123981154922201858, guid: eca43cb21605d634dbf663510d33e3cd,
         type: 3}
       propertyPath: m_Mesh

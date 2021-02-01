@@ -9751,10 +9751,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03b41936733424c9fb48bb809fad34a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radiusToDetectBox: 1
   targetDoor: {fileID: 7389257821608541541}
   boxes:
   - {fileID: 964400035933191128}
+  openCloseAudio: {fileID: 0}
 --- !u!1 &1887480247338182540
 GameObject:
   m_ObjectHideFlags: 0
@@ -13076,10 +13076,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03b41936733424c9fb48bb809fad34a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radiusToDetectBox: 1
   targetDoor: {fileID: 33594106190542506}
   boxes:
   - {fileID: 7729217186281982414}
+  openCloseAudio: {fileID: 0}
 --- !u!1 &2363489182964304142
 GameObject:
   m_ObjectHideFlags: 0
@@ -18292,11 +18292,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03b41936733424c9fb48bb809fad34a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radiusToDetectBox: 1
   targetDoor: {fileID: 3849764459421163130}
   boxes:
   - {fileID: 1778786817742177871}
   - {fileID: 3176202349267476758}
+  openCloseAudio: {fileID: 0}
 --- !u!1 &3108446933267451701
 GameObject:
   m_ObjectHideFlags: 0
@@ -26928,11 +26928,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03b41936733424c9fb48bb809fad34a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radiusToDetectBox: 1
   targetDoor: {fileID: 3272740266700983444}
   boxes:
   - {fileID: 6973608078161913031}
   - {fileID: 6555062180750471549}
+  openCloseAudio: {fileID: 0}
 --- !u!1 &4726522922874592512
 GameObject:
   m_ObjectHideFlags: 0
@@ -34874,7 +34874,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6044122519229223445}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -36254,11 +36254,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03b41936733424c9fb48bb809fad34a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radiusToDetectBox: 1
   targetDoor: {fileID: 8472477737464124020}
   boxes:
   - {fileID: 6973608078161913031}
   - {fileID: 6555062180750471549}
+  openCloseAudio: {fileID: 0}
 --- !u!1 &6218939315207462825
 GameObject:
   m_ObjectHideFlags: 0
@@ -36593,7 +36593,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6229535849704824303}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7, y: 0.51, z: -19}
+  m_LocalPosition: {x: 7, y: 0.51, z: -24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 27120935636846850}
@@ -43270,11 +43270,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03b41936733424c9fb48bb809fad34a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radiusToDetectBox: 1
   targetDoor: {fileID: 8178713760561361610}
   boxes:
   - {fileID: 1778786817742177871}
   - {fileID: 3176202349267476758}
+  openCloseAudio: {fileID: 0}
 --- !u!1 &7849186242410226759
 GameObject:
   m_ObjectHideFlags: 0
@@ -43950,7 +43950,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8030783351601108371}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16, y: 0.51, z: -4}
+  m_LocalPosition: {x: 19, y: 0.51, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4134455544807539070}
